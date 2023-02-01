@@ -1,4 +1,4 @@
-name: Deploy to ECR
+name: Deploy to the ECR
 
 on: 
   push:
@@ -34,7 +34,7 @@ jobs:
       run: |
         cd Chapter02/kubia/
         ls -ltra
-        # Docker build
+        # Docker builD
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
         # Unit test
         docker run -d -p 80:8080 --name nodeapp $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
